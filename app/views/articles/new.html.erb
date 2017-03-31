@@ -1,0 +1,21 @@
+<h1>New Article</h1>
+<!-- form_for is a nice and easy way for creating a simple interface to create new resource objects.-->
+<!-- f is the FormBuilder object -->
+<!-- We need to set the form-action to a different route though. It defaults to new/articles. -->
+<!-- Arguments for url is looked up via the url pattern in bin/rails -->
+<!-- Form by default will send a POST request to the articles_path. -->
+<%= form_for :article, url: articles_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
