@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # Resources are abstract representations of objects that can be used within an object.
   # Provides easy access for CRUD operations.
   # Routes are automatically created. Yay rails!
-  resources :articles
+  resources :articles do 
+  	resources :comments
+  end
 
   # Tells rails to map the root of the application to welcomecontroller's index function
   root 'welcome#index'
